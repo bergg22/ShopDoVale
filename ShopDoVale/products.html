@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - ShopDoVale</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-leaf"></i>
+                    <h1>ShopDoVale</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="products.html" class="active">Produtos</a></li>
+                    <li><a href="producers.html">Produtores</a></li>
+                    <li><a href="about.html">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="auth-buttons" id="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Entrar</a>
+                    <a href="register.html" class="btn btn-primary">Cadastrar</a>
+                </div>
+                <div class="user-profile hidden" id="user-profile">
+                    <button class="profile-button">
+                        <i class="fas fa-user"></i>
+                        <span id="username">Usuário</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">Meu Perfil</a>
+                        <a href="orders.html" id="orders-link">Meus Pedidos</a>
+                        <a href="products-management.html" id="products-link" class="hidden">Meus Produtos</a>
+                        <a href="#" id="logout-button">Sair</a>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h2>Produtos</h2>
+                <p>Encontre os melhores produtos locais</p>
+            </div>
+
+            <div class="products-filters">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar produtos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-group">
+                    <select id="category-filter">
+                        <option value="">Todas as categorias</option>
+                        <option value="frutas">Frutas</option>
+                        <option value="legumes">Legumes</option>
+                        <option value="verduras">Verduras</option>
+                        <option value="organicos">Orgânicos</option>
+                        <option value="processados">Processados</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                    <select id="sort-filter">
+                        <option value="relevance">Relevância</option>
+                        <option value="price-asc">Menor preço</option>
+                        <option value="price-desc">Maior preço</option>
+                        <option value="name-asc">A-Z</option>
+                        <option value="name-desc">Z-A</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be added dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i>
+                        <h3>ShopDoVale</h3>
+                    </div>
+                    <p>Conectando produtores locais e consumidores.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="products.html">Produtos</a></li>
+                        <li><a href="producers.html">Produtores</a></li>
+                        <li><a href="about.html">Sobre nós</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="terms.html">Termos de Uso</a></li>
+                        <li><a href="privacy.html">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Rua do Vale, 123 - Vale Verde</li>
+                        <li><i class="fas fa-phone"></i> (11) 9999-8888</li>
+                        <li><i class="fas fa-envelope"></i> contato@shopdovale.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopDoVale. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

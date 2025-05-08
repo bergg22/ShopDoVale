@@ -1,0 +1,16 @@
+falta: 
+-geral:
+	homepage deve listar produtos e produtores reais puxando do banco de dados
+	adicionar detalhes de produtos
+	adicionar detalhes de produtores
+	criar política de privacidade e termos de uso
+- comprador:
+	perfil
+	pedidos
+	frete não muda valor ao selecionar a opção de buscar produto
+-comerciante:
+	botão deletar produto não funciona
+	botão editar produto não salva
+	não adiciona produtos
+	estoque de produtos deve vir zerado
+	

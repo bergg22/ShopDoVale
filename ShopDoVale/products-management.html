@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Produtos - ShopDoVale</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/products-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-leaf"></i>
+                    <h1>ShopDoVale</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="products.html">Produtos</a></li>
+                    <li><a href="producers.html">Produtores</a></li>
+                    <li><a href="about.html">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="user-profile" id="user-profile">
+                    <button class="profile-button">
+                        <i class="fas fa-user"></i>
+                        <span id="username">Usuário</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">Meu Perfil</a>
+                        <a href="orders.html" id="orders-link">Meus Pedidos</a>
+                        <a href="products-management.html" id="products-link" class="active">Meus Produtos</a>
+                        <a href="#" id="logout-button">Sair</a>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="products-management">
+        <div class="container">
+            <div class="page-header">
+                <h2>Gerenciamento de Produtos</h2>
+                <button id="add-product-btn" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Adicionar Produto
+                </button>
+            </div>
+
+            <div class="products-dashboard">
+                <div class="filters">
+                    <div class="search-box">
+                        <input type="text" id="product-search" placeholder="Buscar produtos...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-group">
+                        <label for="status-filter">Status:</label>
+                        <select id="status-filter">
+                            <option value="all">Todos</option>
+                            <option value="active">Ativos</option>
+                            <option value="inactive">Inativos</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-table-container">
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>Imagem</th>
+                                <th>Nome</th>
+                                <th>Categoria</th>
+                                <th>Preço</th>
+                                <th>Estoque</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-list">
+                            <!-- Os produtos serão carregados dinamicamente aqui -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="empty-state hidden" id="no-products">
+                    <div class="empty-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Nenhum produto cadastrado</h3>
+                    <p>Comece a adicionar seus produtos para vender</p>
+                    <button id="empty-add-product-btn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Adicionar produto
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para adicionar/editar produto -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Adicionar Produto</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="product-form">
+                    <input type="hidden" id="product-id">
+                    
+                    <div class="form-group">
+                        <label for="product-name">Nome do produto*</label>
+                        <input type="text" id="product-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-description">Descrição*</label>
+                        <textarea id="product-description" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-price">Preço (R$)*</label>
+                            <input type="number" id="product-price" step="0.01" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product-stock">Quantidade em estoque*</label>
+                            <input type="number" id="product-stock" min="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-category">Categoria*</label>
+                        <select id="product-category" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="frutas">Frutas</option>
+                            <option value="legumes">Legumes</option>
+                            <option value="verduras">Verduras</option>
+                            <option value="organicos">Orgânicos</option>
+                            <option value="processados">Processados</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-image">Imagem do produto</label>
+                        <div class="image-upload">
+                            <div class="image-preview" id="image-preview">
+                                <i class="fas fa-image"></i>
+                                <span>Nenhuma imagem selecionada</span>
+                            </div>
+                            <label for="product-image-input" class="btn btn-outline">
+                                <i class="fas fa-upload"></i> Escolher imagem
+                            </label>
+                            <input type="file" id="product-image-input" accept="image/*">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-status">Status</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="product-status" checked>
+                            <label for="product-status"></label>
+                            <span class="toggle-label">Ativo</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancel-btn">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="save-product-btn">Salvar produto</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmação para exclusão -->
+    <div class="modal" id="confirm-delete-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirmar exclusão</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja excluir o produto <strong id="delete-product-name"></strong>?</p>
+                <p>Esta ação não pode ser desfeita.</p>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="cancel-delete-btn">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="confirm-delete-btn">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i>
+                        <h3>ShopDoVale</h3>
+                    </div>
+                    <p>Conectando produtores locais e consumidores.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="products.html">Produtos</a></li>
+                        <li><a href="producers.html">Produtores</a></li>
+                        <li><a href="about.html">Sobre nós</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="terms.html">Termos de Uso</a></li>
+                        <li><a href="privacy.html">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Rua do Vale, 123 - Vale Verde</li>
+                        <li><i class="fas fa-phone"></i> (11) 9999-8888</li>
+                        <li><i class="fas fa-envelope"></i> contato@shopdovale.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopDoVale. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Template para linha da tabela de produtos -->
+    <template id="product-row-template">
+        <tr data-id="">
+            <td class="product-image">
+                <img src="" alt="">
+            </td>
+            <td class="product-name"></td>
+            <td class="product-category"></td>
+            <td class="product-price"></td>
+            <td class="product-stock"></td>
+            <td class="product-status"></td>
+            <td class="product-actions">
+                <button class="action-btn edit-btn" title="Editar">
+                    <i class="fas fa-edit"></i>
+                </button>
+                <button class="action-btn delete-btn" title="Excluir">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+    </template>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/products-management.js"></script>
+</body>
+</html>

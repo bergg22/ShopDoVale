@@ -1,0 +1,221 @@
+/* Products Management Page */
+.products-dashboard {
+  margin-top: var(--spacing-xl);
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.search-box {
+  flex: 1;
+  position: relative;
+}
+
+.search-box input {
+  padding-right: 40px;
+}
+
+.search-box button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  padding: 0 var(--spacing-md);
+  transition: color var(--animation-speed-fast) ease;
+}
+
+.search-box button:hover {
+  color: var(--primary-color);
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.filter-group select {
+  min-width: 150px;
+}
+
+.products-table-container {
+  overflow-x: auto;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.products-table th {
+  text-align: left;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.products-table td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.products-table tr:last-child td {
+  border-bottom: none;
+}
+
+.products-table tr:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.product-image {
+  width: 80px;
+}
+
+.product-image img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+}
+
+.product-status {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.product-status.active {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--success-color);
+}
+
+.product-status.inactive {
+  background-color: rgba(158, 158, 158, 0.1);
+  color: var(--text-tertiary);
+}
+
+.product-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  color: var(--text-secondary);
+  transition: all var(--animation-speed-fast) ease;
+}
+
+.edit-btn:hover {
+  background-color: rgba(46, 125, 50, 0.1);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.delete-btn:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  color: var(--text-tertiary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.empty-state h3 {
+  margin-bottom: var(--spacing-md);
+}
+
+.empty-state p {
+  margin-bottom: var(--spacing-xl);
+  color: var(--text-secondary);
+}
+
+/* Product form */
+.image-upload {
+  margin-top: var(--spacing-sm);
+}
+
+.image-preview {
+  width: 100%;
+  height: 200px;
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-tertiary);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.image-preview i {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.image-preview.has-image i,
+.image-preview.has-image span {
+  display: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+  
+  .filter-group select {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-table {
+    min-width: 700px;
+  }
+}

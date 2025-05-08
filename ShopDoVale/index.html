@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopDoVale - Produtos locais direto do produtor</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-leaf"></i>
+                    <h1>ShopDoVale</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="products.html">Produtos</a></li>
+                    <li><a href="producers.html">Produtores</a></li>
+                    <li><a href="about.html">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="auth-buttons" id="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Entrar</a>
+                    <a href="register.html" class="btn btn-primary">Cadastrar</a>
+                </div>
+                <div class="user-profile hidden" id="user-profile">
+                    <button class="profile-button">
+                        <i class="fas fa-user"></i>
+                        <span id="username">Usuário</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html">Meu Perfil</a>
+                        <a href="orders.html" id="orders-link">Meus Pedidos</a>
+                        <a href="products-management.html" id="products-link" class="hidden">Meus Produtos</a>
+                        <a href="#" id="logout-button">Sair</a>
+                    </div>
+                </div>
+            </div>
+            <button class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Produtos frescos diretamente do produtor para sua mesa</h2>
+                <p>Conectamos produtores locais a consumidores conscientes, promovendo uma economia sustentável e valorização do produto local.</p>
+                <div class="hero-buttons">
+                    <a href="products.html" class="btn btn-primary btn-large">Ver produtos</a>
+                    <a href="register.html" class="btn btn-secondary btn-large">Seja um produtor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-card">
+                <i class="fas fa-truck-moving"></i>
+                <h3>Entrega ou Retirada</h3>
+                <p>Escolha como deseja receber seus produtos</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-seedling"></i>
+                <h3>Produção Local</h3>
+                <p>Apoie produtores da sua região</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Produtos Frescos</h3>
+                <p>Qualidade e frescor garantidos</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Produtos em Destaque</h2>
+                <a href="products.html" class="view-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="products-grid" id="featured-products">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-producers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Conheça Nossos Produtores</h2>
+                <a href="producers.html" class="view-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="producers-grid" id="featured-producers">
+                <!-- Producers will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Adoro a qualidade dos produtos e a facilidade de comprar diretamente dos produtores locais. Altamente recomendado!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1" alt="Maria Silva">
+                        <div>
+                            <h4>Maria Silva</h4>
+                            <p>Cliente</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Como produtor, o ShopDoVale me ajudou a encontrar novos clientes e expandir meu negócio de forma sustentável."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1" alt="João Oliveira">
+                        <div>
+                            <h4>João Oliveira</h4>
+                            <p>Produtor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Junte-se a nós</h2>
+            <p>Cadastre-se hoje e faça parte da nossa comunidade</p>
+            <div class="cta-buttons">
+                <a href="register.html?type=buyer" class="btn btn-primary">Cadastrar como Comprador</a>
+                <a href="register.html?type=producer" class="btn btn-secondary">Cadastrar como Produtor</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i>
+                        <h3>ShopDoVale</h3>
+                    </div>
+                    <p>Conectando produtores locais e consumidores.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="products.html">Produtos</a></li>
+                        <li><a href="producers.html">Produtores</a></li>
+                        <li><a href="about.html">Sobre nós</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="terms.html">Termos de Uso</a></li>
+                        <li><a href="privacy.html">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Rua do Vale, 123 - Vale Verde</li>
+                        <li><i class="fas fa-phone"></i> (11) 9999-8888</li>
+                        <li><i class="fas fa-envelope"></i> contato@shopdovale.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopDoVale. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

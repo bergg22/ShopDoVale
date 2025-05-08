@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - ShopDoVale</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-leaf"></i>
+                    <h1>ShopDoVale</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="products.html">Produtos</a></li>
+                    <li><a href="producers.html">Produtores</a></li>
+                    <li><a href="about.html">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Entrar</a>
+                    <a href="register.html" class="btn btn-primary active">Cadastrar</a>
+                </div>
+            </div>
+            <button class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2 id="register-title">Cadastre-se</h2>
+                <p id="register-subtitle">Crie sua conta para começar a comprar</p>
+            </div>
+            <div class="user-type-selector" id="user-type-selector">
+                <button class="user-type-btn active" data-type="buyer">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Sou comprador</span>
+                </button>
+                <button class="user-type-btn" data-type="producer">
+                    <i class="fas fa-store"></i>
+                    <span>Sou produtor</span>
+                </button>
+            </div>
+            <form id="register-form" class="auth-form">
+                <input type="hidden" id="user-type" name="user-type" value="buyer">
+                
+                <div class="form-group">
+                    <label for="name">Nome completo</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar senha</label>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <div class="input-icon">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                
+                <!-- Campos específicos para produtores -->
+                <div id="producer-fields" class="hidden">
+                    <div class="form-group">
+                        <label for="business-name">Nome do negócio</label>
+                        <div class="input-icon">
+                            <i class="fas fa-store"></i>
+                            <input type="text" id="business-name" name="business-name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="business-description">Descrição do negócio</label>
+                        <textarea id="business-description" name="business-description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Endereço completo</label>
+                        <div class="input-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="address" name="address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Opções de entrega oferecidas</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox">
+                                <input type="checkbox" name="delivery-option" value="delivery">
+                                <span>Entrega a domicílio</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="delivery-option" value="pickup">
+                                <span>Retirada no local</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <span>Eu concordo com os <a href="terms.html">Termos de Uso</a> e <a href="privacy.html">Política de Privacidade</a></span>
+                    </label>
+                </div>
+                
+                <div class="form-error" id="register-error"></div>
+                <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+            </form>
+            <div class="auth-footer">
+                <p>Já tem uma conta?</p>
+                <a href="login.html" class="btn btn-outline btn-block">Entrar</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i>
+                        <h3>ShopDoVale</h3>
+                    </div>
+                    <p>Conectando produtores locais e consumidores.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="products.html">Produtos</a></li>
+                        <li><a href="producers.html">Produtores</a></li>
+                        <li><a href="about.html">Sobre nós</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="terms.html">Termos de Uso</a></li>
+                        <li><a href="privacy.html">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Rua do Vale, 123 - Vale Verde</li>
+                        <li><i class="fas fa-phone"></i> (11) 9999-8888</li>
+                        <li><i class="fas fa-envelope"></i> contato@shopdovale.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopDoVale. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>
