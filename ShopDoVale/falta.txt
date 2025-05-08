@@ -4,6 +4,7 @@ falta:
 	adicionar detalhes de produtos
 	adicionar detalhes de produtores
 	criar política de privacidade e termos de uso
+	banco e website não estão integrados, usuários criados, produtos, categorias nada está conectado ao banco
 - comprador:
 	perfil
 	pedidos
