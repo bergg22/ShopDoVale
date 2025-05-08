@@ -9,6 +9,7 @@ falta:
 	perfil
 	pedidos
 	frete não muda valor ao selecionar a opção de buscar produto
+	carrinho deve ser salvo por usuário, ou seja, se deslogar o usuário carrinho deve zerar
 -comerciante:
 	botão deletar produto não funciona
 	botão editar produto não salva
