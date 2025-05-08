@@ -16,3 +16,18 @@ falta:
 	não adiciona produtos
 	estoque de produtos deve vir zerado
 	
+COISAS QUE EU ACHEI: 
+No carrinho, quando a quantidade de produtos for zerada, tem q excluir
+Verificar os campos na hora do cadastro, exemplo, se colocar AAA, nao pode ser um telefone
+Ajeitar Nossa Equipe
+Descobrir o que é os Termos de Uso e a Política de Privacidade
+Descobrir o que significa FAQ
+Tirar nosso impacto por enquanto, ja que nao tem impacto nenhum
+Integrar com o banco de dados
+Ajeitar o frete
+Criar uma página com o CRUD do perfil (Meu perfil)
+Criar uma página com o CRUD do perfil (Meus Pedidos) -- Meus pedidos nao pode aparecer na conta do Produtor
+Criar uma página com o CRUD do perfil (Meus Produtos)
+Mudar o início dependendo da conta logada
+Tirar os feedbacks
+Adicionar opção para ~dar feedbacks
