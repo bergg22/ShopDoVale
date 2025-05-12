@@ -1,33 +1,59 @@
-falta: 
--geral:
-	homepage deve listar produtos e produtores reais puxando do banco de dados
-	adicionar detalhes de produtos
-	adicionar detalhes de produtores
-	criar política de privacidade e termos de uso
-	banco e website não estão integrados, usuários criados, produtos, categorias nada está conectado ao banco
-- comprador:
-	perfil
-	pedidos
-	frete não muda valor ao selecionar a opção de buscar produto
-	carrinho deve ser salvo por usuário, ou seja, se deslogar o usuário carrinho deve zerar
--comerciante:
-	botão deletar produto não funciona
-	botão editar produto não salva
-	não adiciona produtos
-	estoque de produtos deve vir zerado
-	
-COISAS QUE EU ACHEI: 
-No carrinho, quando a quantidade de produtos for zerada, tem q excluir
-Verificar os campos na hora do cadastro, exemplo, se colocar AAA, nao pode ser um telefone
-Ajeitar Nossa Equipe
-Descobrir o que é os Termos de Uso e a Política de Privacidade
-Descobrir o que significa FAQ
-Tirar nosso impacto por enquanto, ja que nao tem impacto nenhum
-Integrar com o banco de dados
-Ajeitar o frete
-Criar uma página com o CRUD do perfil (Meu perfil)
-Criar uma página com o CRUD do perfil (Meus Pedidos) -- Meus pedidos nao pode aparecer na conta do Produtor
-Criar uma página com o CRUD do perfil (Meus Produtos)
-Mudar o início dependendo da conta logada
-Tirar os feedbacks
-Adicionar opção para ~dar feedbacks
+Geral
+Homepage:
+Listar produtos e produtores reais puxando do banco de dados.
+Detalhes:
+Adicionar página ou seção com detalhes de produtos.
+Adicionar página ou seção com detalhes de produtores.
+Políticas:
+Criar Política de Privacidade.
+Criar Termos de Uso.
+Banco de Dados:
+Conectar o banco de dados ao sistema:
+Usuários criados.
+Produtos e categorias.
+Integração geral do banco com o site.
+Comprador
+Perfil:
+Criar página com o CRUD do perfil (Meu perfil).
+Pedidos:
+Criar página com o CRUD de pedidos (Meus Pedidos).
+Nota: Meus Pedidos não deve aparecer na conta do Produtor.
+Frete:
+Corrigir problema onde o valor do frete não muda ao selecionar a opção de buscar o produto.
+Carrinho:
+Fazer o carrinho ser salvo por usuário (se o usuário deslogar, o carrinho deve zerar).
+Se a quantidade de produtos no carrinho for zerada, o produto deve ser excluído automaticamente.
+Comerciante
+Produtos:
+Corrigir botão de deletar produto (não está funcionando).
+Corrigir botão de editar produto (não está salvando as alterações).
+Permitir que produtos sejam adicionados.
+Quando um produto for adicionado, o estoque deve iniciar zerado.
+Criar página com o CRUD de produtos (Meus Produtos).
+Outras Melhorias
+Validação de Campos:
+Verificar campos no cadastro, por exemplo:
+Telefones com textos como "AAA" devem ser invalidados.
+Melhorar a validação geral em formulários.
+Página "Nossa Equipe":
+Ajustar o conteúdo ou remover temporariamente.
+Termos e FAQ:
+Descobrir o significado de:
+Termos de Uso.
+Política de Privacidade.
+FAQ.
+Nosso Impacto:
+Remover a seção "Nosso Impacto" temporariamente, já que ainda não há informações relevantes.
+Feedbacks:
+Remover feedbacks atuais.
+Adicionar opção para dar feedbacks (de forma estruturada).
+Início Dinâmico:
+Ajustar a página inicial dependendo do tipo de conta logada (Comprador ou Comerciante).
+Frete:
+Melhorar integração e funcionamento geral do frete.
+Tarefas Técnicas Prioritárias
+Integração com o Banco de Dados: Garantir que todas as funcionalidades descritas (usuários, produtos, categorias, etc.) estejam conectadas ao banco de dados.
+CRUD de Páginas:
+Meu Perfil.
+Meus Pedidos.
+Meus Produtos.
